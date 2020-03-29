@@ -1,0 +1,6 @@
+# This is how I installed the Octave Signal Package on Ubuntu 18.04
+
+sudo apt install octave
+sudo apt install liboctave-dev
+sudo apt install octave-optim octave-specfun octave-control octave-signal
+
