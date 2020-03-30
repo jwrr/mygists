@@ -1,3 +1,3 @@
 # mygists
-My Gists easily accessible form github profile page.
+My Gists easily accessible from github profile page.
 
