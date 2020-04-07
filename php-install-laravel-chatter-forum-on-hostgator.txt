@@ -1,0 +1,59 @@
+# USE CPANEL TO CHANGE .HTACCESS FROM PHP 5.4 TO 7.1
+
+# Change CLI path. Composer will faile if this is not done.
+export PATH=/opt/php71/bin:$PATH
+which php
+
+# Composer is already installed on Hostgator. Use it to install laravel
+composer global require "laravel/installer"
+
+# Add composer directory to path
+export PATH=~/.composer/vendor/bin:$PATH
+
+# Create a project
+cd www/new_domain_name
+composer create-project laravel/laravel forum 5.8.*
+cd forum
+php artisan --version
+
+# Install Chatter Forum
+
+php artisan make:auth
+composer require "devdojo/chatter:0.2.*"
+php artisan vendor:publish --provider="DevDojo\Chatter\ChatterServiceProvider"
+composer dump-autoload
+
+# USE CPANEL TO CREATE NEW DATABASE
+edit .env - enter database information. While we're here change the APP_NAME to Something better
+
+# Make sure database is empty. Artisan migrate will fail if the 'users' table exists
+mysql -u username -p new_database_name
+mysql> show databases;
+mysql> select new_database_name;
+mysql> show tables;
+mysql> drop users;
+mysql> drop any_other_tables;
+mysql> exit;
+
+# Update the database
+php artisan migrate
+php artisan env
+
+# Add some initial content.
+php artisan db:seed --class=ChatterTableSeeder
+
+# Edit app.blade.php
+lued resources/views/layouts/app.blade.php
+add @yield('css'); to end of </head> and add @yield('js') to end of body. 
+
+POSSIBLE CHATTER BUG FIX:
+In app.blade.php delete 'defer'. Before I did this the javascript popup text editor would not open.
+
+
+#USE CPANEL TO CHANGE PATH TO DOMAIN NAME FROM www/domain_name to www/domain_name/forums/public
+
+TRY IT. IT SHOULD BE WORKING.
+
+# Change 'fire' to 'dispatch'. Laravel 5.8 needes this
+lued ./vendor/devdojo/chatter/src/Controllers/ChatterDiscussionController.php ./vendor/devdojo/chatter/src/Controllers/ChatterPostController.php
+
