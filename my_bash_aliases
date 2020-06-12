@@ -1,5 +1,9 @@
 
-export PATH=$PATH:~/bin:.
+export PATH=$PATH:~/bin:node_modules/.bin/:./wordpress/node_modules/.bin:.
+
+## Jekyll
+export GEM_HOME=$HOME/gems
+export PATH=$PATH:$HOME/gems/bin
 
 alias cd..='cd ..'
 alias ..='cd ..'
@@ -24,11 +28,46 @@ alias ltr='ls -ltr'
 alias p='pushd ..'
 alias pp='pushd ../..'
 alias ppp='pushd ../../..'
+alias stopwatch='echo "Press <Enter> to stop..."; time read'
 alias update='sudo apt-get update && sudo apt-get upgrade'
 
 alias zipl='zip lued-latest.zip `find .lued |grep -v git |grep -v build`'
 alias shal='sha256sum lued-latest.zip > sha256sum.txt'
 alias scpl='scp -P 2222 lued-latest.zip sha256sum.txt jwrr@lued.org:www/lued.org/download/'
 alias sshl='ssh -p 2222 jwrr@lued.org:'
+
+
+function create_github_repo() {
+  if [ "$1" == "" ]; then
+    printf "Enter repo name: "
+    read repo_name
+  else
+    repo_name=$1
+  fi
+
+  if [ "$2" == "" ]; then
+    printf "Enter user name: "
+    read user_name
+  else
+    user_name=$2
+  fi
+
+  mkdir -p $repo_name
+  cd $repo_name
+  echo $repo_name > README.md
+  git init
+  git add README.md
+  git commit -m "First commit"
+  git remote add origin https://github.com/$user_name/$repo_name.git
+  
+  echo "Create repo on Github"
+  set -x
+  curl -u $user_name https://api.github.com/user/repos -d "{\"name\":\"$repo_name\"}"
+  set +x
+  
+  echo "Push repo"
+  git push origin master
+}
+
 
 
