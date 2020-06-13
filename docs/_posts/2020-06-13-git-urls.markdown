@@ -1,0 +1,22 @@
+---
+layout: post
+title:  Useful Links
+date:   2020-06-13 12:05:29 -0400
+categories: gists update
+---
+
+Here are some useful urls.
+
+Useful Links
+------------
+
+- [Discover Gists- https://gist.github.com/discover][discover]
+- [My Gists - https://gist.github.com/jwrr][mygists]
+- [New Gist - https://gist.github.com][newgist]
+- [My Repo - https://jwrr.github.com/gists][myrepo]
+
+[discover]: https://gist.github.com/discover 
+[mygists]:  https://gist.github.com/jwrr
+[myrepo]:   https://github.com/jwrr/gists
+[newgist]:  https://gist.github.com
+
