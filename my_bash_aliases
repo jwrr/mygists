@@ -5,6 +5,10 @@ export PATH=$PATH:~/bin:node_modules/.bin/:./wordpress/node_modules/.bin:.
 export GEM_HOME=$HOME/gems
 export PATH=$PATH:$HOME/gems/bin
 
+## RISC-V Compiler
+export PATH=$PATH:/opt/riscv/bin
+export PATH=$PATH:~/.local/bin
+
 alias cd..='cd ..'
 alias ..='cd ..'
 alias ...='cd ../..'
