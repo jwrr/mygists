@@ -40,6 +40,15 @@ alias shal='sha256sum lued-latest.zip > sha256sum.txt'
 alias scpl='scp -P 2222 lued-latest.zip sha256sum.txt jwrr@lued.org:www/lued.org/download/'
 alias sshl='ssh -p 2222 jwrr@lued.org:'
 
+# gnome-terminal foolishly removed the --title feature (what were they thinking???)
+# This work-around is based on https://www.zachpfeffer.com/single-post/Change-the-title-of-a-terminal-on-Ubuntu-1604
+function set_title() {
+PS1=$
+PROMPT_COMMAND=
+echo -en "\033]0;$1\a"
+}
+alias sett=set_title
+
 
 function create_github_repo() {
   if [ "$1" == "" ]; then
