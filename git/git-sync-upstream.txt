@@ -1,0 +1,13 @@
+# git - How to sync fork with upstream repo?
+
+git remote add upstream https://github.com/user/repo.git
+git pull upstream master
+
+# you can also directly pull from upstream
+
+git pull https://github.com/user/repo.git master
+
+git fetch works too.
+
+
+
