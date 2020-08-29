@@ -14,5 +14,5 @@ git fetch works too.
 # then the new files will NOT be replaced.  Use a hard reset to match
 # the same versions as the upstream repo.
 
-git reqset --hard upstream/master
+git reset --hard upstream/master
 
