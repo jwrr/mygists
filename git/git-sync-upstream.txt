@@ -3,7 +3,7 @@
 git remote add upstream https://github.com/user/repo.git
 git pull upstream master
 
-# you can also directly pull from upstream
+# Upstream can be directly pulled
 
 git pull https://github.com/user/repo.git master
 
