@@ -10,4 +10,9 @@ git pull https://github.com/user/repo.git master
 git fetch works too.
 
 
+# If the local repo has files that are newer than the upstream repo,
+# then the new files will NOT be replaced.  Use a hard reset to match
+# the same versions as the upstream repo.
+
+git reqset --hard upstream/master
 
