@@ -7,7 +7,3 @@ git config --get remote.origin.url
 
 grep url .git/config
 
-
-git remote add upstream https://github.com/abnoname/iceZ0mb1e.git
-git pull upstream
-
