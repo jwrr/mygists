@@ -1,0 +1,16 @@
+# git - How to unadd file that has been staged? 
+
+git reset filename
+
+The file will still exist and be unchanged. It just won't be staged.'
+
+# -----------------------------------------------------
+
+# Similar Commands
+
+# git - How to revert file to initial, unmodified state?
+
+git checkout -- filename
+
+
+
