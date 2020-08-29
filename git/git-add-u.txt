@@ -1,0 +1,16 @@
+# Ho
+# git - how to add all modified files?
+
+git add -u
+
+# -----------------------------------------------------
+
+# Similar Commands
+
+# git - how ot add all new, deleted and modified files?
+
+git add -A  # entire repo. 
+
+git add . # current directory including sub-directories
+
+
