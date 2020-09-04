@@ -1,5 +1,13 @@
 ## How to add external project using git submodule?
 
+git submodule add https://github.com/user/repo.git path/repo
+git add .gitmodules path/repo
+
+## How to bump submodule to latest upstream
+
+git submodule update --remote --merge
+
+
 ## These are notes from when I added submodules to lued.
 
 ## Clean up
