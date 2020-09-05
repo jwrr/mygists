@@ -3,10 +3,14 @@
 git submodule add https://github.com/user/repo.git path/repo
 git add .gitmodules path/repo
 
-## How to bump submodule to latest upstream
+## How to bump submodule to latest upstrea?m
 
 git submodule update --remote --merge
 
+
+## How to pull submodules after git clone?
+
+git submodule update --init
 
 ## These are notes from when I added submodules to lued.
 
