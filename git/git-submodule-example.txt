@@ -7,6 +7,9 @@ git add .gitmodules path/repo
 
 git submodule update --remote --merge
 
+# if that doesn't work then drop down into the submodule and try
+ 
+git reset --hard HEAD
 
 ## How to pull submodules after git clone?
 
