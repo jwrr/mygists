@@ -1,0 +1,10 @@
+# git - How to git rm all files that have deleted?
+
+
+git add -u
+
+This adds all modified files to the staging area. It also 'git rm' all deleted
+files.
+
+
+
