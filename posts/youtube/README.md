@@ -16,7 +16,9 @@ Hotkeys
 * &gt; - speed up video
 * &lt; - slow down video
 * f - toggle full screen
-* i - open the Miniplayer
+* t - toggle theatre mode (slightly smaller than full screen with visible task bar)
+* i - toggle open the Miniplayer
+* m - toggle mute
 * shift+N - go to next video (in playlist)
 * shift+P - go to previous video (in playlist)
 
@@ -25,4 +27,9 @@ Create GIF
 * create 10-second gif. goto youtube video and then change youtube to gifyoutube in url
 * I don't think this is a Youtube website
 
-'
+Get Transcript
+-------------
+
+* Under the video's title, there are three dots (ellipsis) next to SHARE and SAVE
+* Click the three dots and then click `Open Transcript`. The transcript will show to the right of the video
+
