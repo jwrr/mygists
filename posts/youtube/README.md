@@ -13,8 +13,8 @@ Hotkeys
 * , - go back 1 frame
 * . - go forward 1 frame
 * 0 through 9 - video is 10 section, numbered 0-9. Press number to jump to section.
-* > - speed up video
-* < - slow down video
+* &gt; - speed up video
+* &lt; - slow down video
 * f - toggle full screen
 * i - open the Miniplayer
 * shift+N - go to next video (in playlist)
