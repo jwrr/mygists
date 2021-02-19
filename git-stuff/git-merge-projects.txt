@@ -1,0 +1,10 @@
+###
+mkdir vhdl-stuff
+cd vhdl-stuff
+git remote add vhdl-stuff https://github.com/jwrr/vhdl-stuff
+git fetch vhdl-stuff --tags
+git merge --allow-unrelated-histories vhdl-stuff/master
+git remote remove vhdl-stuff
+git status
+git push
+
