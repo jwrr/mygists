@@ -1,0 +1,10 @@
+
+Never enter password again on Ubuntu 20.04 LTS (Focal Fossa) 
+------------------------------------------------------------
+
+Show Applications -> Search 'settings' -> Users -> Unlock -> Automatic Login
+Show Applications -> Search 'settings' -> Privacy -> Screen Lock -> Automatic Screenlock and Lock Screen on Suspend
+
+ 
+
+
