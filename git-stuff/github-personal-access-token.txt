@@ -1,0 +1,7 @@
+Browser -> github.com -> sign-in
+Click UpperRightProfiile -> Settings -> Developer Settings -> Personal Access Tokens
+Click 'Generate new token' -> Select 'repo' and 'gists' -> Generate Token
+git config --global credential.helper manager
+
+
+
