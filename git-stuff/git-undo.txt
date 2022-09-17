@@ -1,0 +1,10 @@
+# git - How to undo changes before git add? 
+
+git checkout -- filename
+
+git checkout .
+
+
+
+
+
