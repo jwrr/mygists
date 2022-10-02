@@ -1,0 +1,8 @@
+# Show differences and changes
+
+git status
+git diff HEAD --name-only
+git diff main origin/main --name-only
+
+
+
