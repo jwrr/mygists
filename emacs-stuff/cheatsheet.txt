@@ -1,0 +1,43 @@
+https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf
+C = <Ctrl>, m = <Alt>
+C-x C-f        Open file
+C-x C-s        Save file
+C-x s          Save all files
+C-x C-w        Save as
+C-x C-c        Quit
+C-x k          Close buffer window
+C-a            Goto start of line
+C-e            Goto end of line
+C-k            Cut to end of line
+m-d            Cut next word
+C-<backspace>  Cut previous word
+C-space        Start select
+C-w            Cut selection
+m-w            Copy selection
+m-g m-g        Goto Line
+C-y            Paste
+C-s            Find / Search
+m-%            Find and Replace
+C-r            Find reverse
+C-/            Undo
+C-g C-/        Redo (change stack direction, then redo)
+C-v            Page down
+m-V            Page up
+m-f            Move forward  word
+m-b            Move back word
+m->            Goto end of file
+m-<            Goto start of file
+C-x C-b        List buffers
+C-x b          Change buffer
+C-x o          Change to other split-screen buffer
+c-x 1          Show only one buffer no split-screen
+c-x 2          Split screen
+c-u 5          Repeat the next command 5 times
+m-u            Upper case word
+m-l            Lower case word
+m-x linum-mode Toggle line numbers
+C-g            Abort partial command
+m-x grep<ret>findstr *.txt
+m-x shell      Open a shell in emacs
+m-x where-is <ret>goto-line<ret> find shortcut
+
