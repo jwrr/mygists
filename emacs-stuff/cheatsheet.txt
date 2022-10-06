@@ -6,17 +6,19 @@ C-x s          Save all files
 C-x C-w        Save as
 C-x C-c        Quit
 C-x k          Close buffer window
+m-g m-g        Goto line
 C-a            Goto start of line
 C-e            Goto end of line
 C-k            Cut to end of line
-m-d            Cut next word
+m-d            Cut to end of word word
 C-<backspace>  Cut previous word
-C-space        Start select
+C-<space>      Start select
 C-w            Cut selection
 m-w            Copy selection
 m-g m-g        Goto Line
 C-y            Paste
 C-s            Find / Search
+C-s c-w        Find current word
 m-%            Find and Replace
 C-r            Find reverse
 C-/            Undo
