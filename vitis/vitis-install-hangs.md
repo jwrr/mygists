@@ -10,22 +10,22 @@ ps aux |grep Xilinx
 jwrr       44658  0.0  0.0   2632   540 pts/0    S+   22:09   0:00 /bin/sh -c /tools/Xilinx/Vivado/2022.2/bin/vivado -nolog -nojournal -mode batch -source /tools/Xilinx/Vivado/2022.2/scripts/sysgen/tcl/xlpartinfo.tcl -tclargs /tools/Xilinx/Vivado/2022.2/data/parts/installed_devices.txt
 ```
 
-And then, without killing the install, you  run them from the terminal with '-nolog -nojournal -mode batch'.
+And then, without killing the install, you  run them from the terminal without '-nolog -nojournal -mode batch'.
 
 ```
 > /bin/sh -c /tools/Xilinx/Vivado/2022.2/bin/vivado -source /tools/Xilinx/Vivado/2022.2/scripts/sysgen/tcl/xlpartinfo.tcl -tclargs /tools/Xilinx/Vivado/2022.2/data/parts/installed_devices.txt
 ```
 
-This should return an error message that hopefully helps to figure out why the install was hung. In my case I needed to install
+This should return an error message that hopefully helps figure out why the install was hung. In my case I needed to install
 libncureses5 (I had libncurses5-dev installed, but I guess that wasn't enough).
 
 ```
 sudo apt install libncurses5
 ```
 
-Then I re-ran the Vitis installer, and six hours later it completed. SUCCESS!
+Then I restarted the Vitis installer, and six hours later it completed. SUCCESS!
 
-Here what was installed before installing Vitis, plus the missing libncurses5. I'm not sure if all of these
+Here's what was installed before installing Vitis, plus the missing libncurses5. I'm not sure if all of these
 are needed.
 
 ```
