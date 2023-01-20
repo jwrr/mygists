@@ -7,6 +7,7 @@ source $XILINX_PATH/Vitis/$XILINX_VERSION/settings64.sh
 
 ## PetaLinux requires Bash shell.
 ## Use this to set shell to bash. Select 'NO' to switch to Bash.
+echo skipping: sudo dpkg-reconfigure dash
 # sudo dpkg-reconfigure dash
 
 echo sudo service tftpd-hpa restart
