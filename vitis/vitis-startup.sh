@@ -14,5 +14,9 @@ echo sudo service tftpd-hpa restart
 sudo service tftpd-hpa restart
 echo source $XILINX_PATH/PetaLinux/$XILINX_VERSION/settings.sh
 source $XILINX_PATH/PetaLinux/$XILINX_VERSION/settings.sh
+
+env |grep XILINX_.*=
+env |grep PETALINUX=
+
 echo done
 
