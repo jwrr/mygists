@@ -137,9 +137,10 @@ alias conda_start='source ~/.bashrc.CONDA'
 conda_start
 
 ## Bump to latest
+conda -V
 conda update conda
 conda update --all
-
+conda -V
 ```
 
 
