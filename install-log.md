@@ -16,7 +16,7 @@ sudo apt install build-essential gcc-multilib iproute2 net-tools libncurses5-dev
   zlib1g:i386 libssl-dev libselinux1 xterm libtool texinfo zlib1g-dev screen pax \
   gawk python3 python3-pexpect python3-pip python3-git python3-jinja2 xz-utils \
   debianutils iputils-ping libegl1-mesa libsdl1.2-dev pylint3 cpio libncurses5 \
-  git cmake tftpd-hpa
+  curl git cmake tftpd-hpa
 ```
 
 
@@ -80,15 +80,7 @@ Install More Github Repos
 cd ~/git/mine
 git clone https://jwrr:BIG_NUMBER_AUTH_KEY@github.com/jwrr/moocs
 git clone https://jwrr:BIG_NUMBER_AUTH_KEY@github.com/jwrr/fpga-stuff
-```
-
-
-Install VS Code
----------------
-
-```
-sudo snap install --classic code
-code README.md
+git clone https://jwrr:BIG_NUMBER_AUTH_KEY@github.com/jwrr/micro-stuff
 ```
 
 
@@ -101,5 +93,35 @@ arduino
 ```
 
 
+Install VS Code and Platform IO
+-------------------------------
+
+```
+sudo snap install --classic code
+code README.md
+
+# Install Platform IO for VS Code:
+# https://platformio.org/install/ide?install=vscode
+
+```
+
+
+Anaconda Install
+----------------
+
+```
+cp -rf .bashrc .bashrc.SAVE
+cd Downloads/
+curl https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh --output anaconda.sh
+sha256sum anaconda.sh
+bash anaconda.sh 
+cd
+diff -s .bashrc .bashrc.SAVE
+mv .bashrc .bashrc.CONDA
+mv .bashrc.SAVE .bashrc
+alias conda_start='source ~/.bashrc.CONDA'
+conda_start
+
+```
 
 

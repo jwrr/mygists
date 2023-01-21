@@ -13,6 +13,10 @@ export PATH=$PATH:~/.local/bin:~/bin
 ## Xilinx Vitis, Vivado and HLS
 alias vitis_start='source ~/git/mine/gists/vitis/vitis-startup.sh'
 
+## ==================================================================
+## Anaconda
+alias conda_start='source ~/git/mine/gists/conda/conda-startup.sh'
+
 alias cd..='cd ..'
 alias home='cd ~'
 function down { cd `find . -type d -name $1 -not -path '*/.*'`; ls; pwd; }
