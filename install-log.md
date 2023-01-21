@@ -35,8 +35,8 @@ source .bash_aliases
 ```
 
 
-Install Lued
-------------
+Install Lued Text Editor
+------------------------
 
 ```
 cd ~/git/mine
@@ -70,7 +70,8 @@ sudo chgrp jwrr /tools/Xilinx
 ./petalinux-v2022.2-10141622-installer.run -d /tools/Xilinx/PetaLinux/2022.2
 
 # Run the Vitis initialization script from my github account
-vitis_start  # source ~/git/mine/gists/vitis/vitis-startup.sh
+alias vitis_start='source ~/git/mine/gists/vitis/vitis-startup.sh'
+vitis_start
 ```
 
 
@@ -82,6 +83,16 @@ cd ~/git/mine
 git clone https://jwrr:BIG_NUMBER_AUTH_KEY@github.com/jwrr/moocs
 git clone https://jwrr:BIG_NUMBER_AUTH_KEY@github.com/jwrr/fpga-stuff
 git clone https://jwrr:BIG_NUMBER_AUTH_KEY@github.com/jwrr/micro-stuff
+git clone https://jwrr:BIG_NUMBER_AUTH_KEY@github.com/jwrr/micro-stuff
+git clone https://jwrr:BIG_NUMBER_AUTH_KEY@github.com/jwrr/cpp-stuff
+git clone https://jwrr:BIG_NUMBER_AUTH_KEY@github.com/jwrr/jetson-stuff
+git clone https://jwrr:BIG_NUMBER_AUTH_KEY@github.com/jwrr/python-stuff
+git clone https://jwrr:BIG_NUMBER_AUTH_KEY@github.com/jwrr/lua-stuff
+git clone https://jwrr:BIG_NUMBER_AUTH_KEY@github.com/jwrr/lcurses
+git clone https://jwrr:BIG_NUMBER_AUTH_KEY@github.com/jwrr/redbean-lua-examples
+git clone https://jwrr:BIG_NUMBER_AUTH_KEY@github.com/jwrr/kicad-stuff
+git clone https://jwrr:BIG_NUMBER_AUTH_KEY@github.com/jwrr/z80usbstuff
+
 ```
 
 
@@ -89,7 +100,7 @@ Install Arduino
 ---------------
 
 ```
-sudo apt install arduino libcanberra-gtk-module
+sudo apt install libcanberra-gtk-module arduino
 arduino
 ```
 
@@ -107,14 +118,16 @@ code README.md
 ```
 
 
-Anaconda Install
+Miniconda Install
 ----------------
 
 ```
+### Download latest from conda
+https://docs.conda.io/en/latest/miniconda.html
+
+cd
 cp -rf .bashrc .bashrc.SAVE
 cd Downloads/
-curl https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh --output anaconda.sh
-sha256sum anaconda.sh
 bash anaconda.sh
 cd
 diff -s .bashrc .bashrc.SAVE
@@ -122,6 +135,10 @@ mv .bashrc .bashrc.CONDA
 mv .bashrc.SAVE .bashrc
 alias conda_start='source ~/.bashrc.CONDA'
 conda_start
+
+## Bump to latest
+conda update conda
+conda update --all
 
 ```
 
