@@ -1,38 +1,41 @@
 
-export PATH=$PATH:~/bin:node_modules/.bin/:./wordpress/node_modules/.bin:.
-
+## ==================================================================
 ## Jekyll
 export GEM_HOME=$HOME/gems
 export PATH=$PATH:$HOME/gems/bin
 
+## ==================================================================
 ## RISC-V Compiler
 export PATH=$PATH:/opt/riscv/bin
-export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/.local/bin:~/bin
+
+## ==================================================================
+## Xilinx Vitis, Vivado and HLS
+alias vitis_start='source ~/git/mine/gists/vitis/vitis-startup.sh'
 
 alias cd..='cd ..'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
+alias home='cd ~'
+function down { cd `find . -type d -name $1 -not -path '*/.*'`; ls; pwd; }
+function pup { if [ "$1" = "" ]; then cnt=1; else cnt=$1; fi; pushd ..; for ((i=1; i<$cnt; i++)); do cd .. ; done; ls; pwd; }
+function up { if [ "$1" = "" ]; then cnt=1; else cnt=$1; fi; for ((i=0; i<$cnt; i++)); do cd .. ; done; ls; pwd; }
+
 alias big='du -sc * | sort -nr'
 alias diskspace='df .'
+alias Eg='env |grep'
 alias Fg='find . |grep'
+alias fdir='find . -type d -not -path "*/.*"'
 alias fontsize='gsettings set org.gnome.desktop.interface text-scaling-factor'
-alias giti='git init'
-alias gits='git status'
-alias gita='git add'
-alias gitcm='git commit -m'
 alias gitpush='git push'
 alias gitunadd='git reset'
 alias gitundo='git checkout --'
 alias h='history'
 alias Hg='history | grep'
-alias led='~/.lued/lued'
-alias lued='~/.lued/lued'
-alias l.='ls -a'
-alias ltr='ls -ltr'
-alias p='pushd ..'
-alias pp='pushd ../..'
-alias ppp='pushd ../../..'
+alias led='lued'
+alias lalias='led ~/.bash_aliases'
+alias salias='source ~/.bash_aliases'
+alias la='ls -a'
+alias ltr='ls -ltrah'
+function md { mkdir -p $1; cd $1; ls; pwd; }
 alias stopwatch='echo "Press <Enter> to stop..."; time read'
 alias update='sudo apt-get update && sudo apt-get upgrade'
 
@@ -41,47 +44,8 @@ alias shal='sha256sum lued-latest.zip > sha256sum.txt'
 alias scpl='scp -P 2222 lued-latest.zip sha256sum.txt jwrr@lued.org:www/lued.org/download/'
 alias sshl='ssh -p 2222 jwrr@lued.org:'
 
-# gnome-terminal foolishly removed the --title feature (what were they thinking???)
-# This work-around is based on https://www.zachpfeffer.com/single-post/Change-the-title-of-a-terminal-on-Ubuntu-1604
-function set_title() {
-PS1=$
-PROMPT_COMMAND=
-echo -en "\033]0;$1\a"
-}
-alias sett=set_title
-
-
-function create_github_repo() {
-  if [ "$1" == "" ]; then
-    printf "Enter repo name: "
-    read repo_name
-  else
-    repo_name=$1
-  fi
-
-  if [ "$2" == "" ]; then
-    printf "Enter user name: "
-    read user_name
-  else
-    user_name=$2
-  fi
-
-  mkdir -p $repo_name
-  cd $repo_name
-  echo $repo_name > README.md
-  git init
-  git add README.md
-  git commit -m "First commit"
-  git remote add origin https://github.com/$user_name/$repo_name.git
-  
-  echo "Create repo on Github"
-  set -x
-  curl -u $user_name https://api.github.com/user/repos -d "{\"name\":\"$repo_name\"}"
-  set +x
-  
-  echo "Push repo"
-  git push origin master
-}
+function set_gnome_terminal_title() { PROMPT=$PS1; TITLE="\[\e]2;$*\a\]"; PS1=${PROMPT}${TITLE}; }
+alias sett=set_gnome_terminal_title
 
 
 
