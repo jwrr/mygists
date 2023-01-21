@@ -51,5 +51,8 @@ alias sshl='ssh -p 2222 jwrr@lued.org:'
 function set_gnome_terminal_title() { PROMPT=$PS1; TITLE="\[\e]2;$*\a\]"; PS1=${PROMPT}${TITLE}; }
 alias sett=set_gnome_terminal_title
 
+alias extract_install_code_from_markdown="source ~/git/mine/gists/extract-code-from-markdown.sh"
+
 export PATH=$PATH:~/bin:.
+
 
