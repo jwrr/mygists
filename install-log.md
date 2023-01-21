@@ -29,8 +29,9 @@ mkdir -p git/others
 cd ~/git/mine
 git clone https://jwrr:BIG_NUMBER_AUTH_KEY@github.com/jwrr/gists
 cd gists
-ln -s $PWD/my_bash_aliases ~/.bash_aliases 
-source .bash_aliases 
+ln -s $PWD/my_bash_aliases ~/.bash_aliases
+cd
+source .bash_aliases
 ```
 
 
@@ -41,12 +42,12 @@ Install Lued
 cd ~/git/mine
 git clone https://jwrr:BIG_NUMBER_AUTH_KEY@github.com/jwrr/lued
 cd lued
-source COMPILE 
+source COMPILE
 mkdir ~/bin
 ln -s $PWD ~/.lued
 ln -s $PWD/lued ~/bin/lued
 export PATH=$PATH:~/bin
-lued README.md 
+lued README.md
 ```
 
 
@@ -57,13 +58,13 @@ Download 2022.2 installers from Xilinx website
 
 ```
 cd ~/Downloads
-chmod 755 Xilinx_Unified_2022.2_1014_8888_Lin64.bin 
+chmod 755 Xilinx_Unified_2022.2_1014_8888_Lin64.bin
 sudo mkdir -p /tools/Xilinx
 sudo chown jwrr /tools/Xilinx
 sudo chgrp jwrr /tools/Xilinx
 
 # Run the Vitis installer (Vivado also gets installed)
-./Xilinx_Unified_2022.2_1014_8888_Lin64.bin 
+./Xilinx_Unified_2022.2_1014_8888_Lin64.bin
 
 # Run the PetaLinux installer
 ./petalinux-v2022.2-10141622-installer.run -d /tools/Xilinx/PetaLinux/2022.2
@@ -114,7 +115,7 @@ cp -rf .bashrc .bashrc.SAVE
 cd Downloads/
 curl https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh --output anaconda.sh
 sha256sum anaconda.sh
-bash anaconda.sh 
+bash anaconda.sh
 cd
 diff -s .bashrc .bashrc.SAVE
 mv .bashrc .bashrc.CONDA
