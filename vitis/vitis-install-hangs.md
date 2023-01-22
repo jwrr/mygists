@@ -35,6 +35,6 @@ sudo apt install -y build-essential gcc-multilib iproute2 net-tools libncurses5-
   zlib1g:i386 libssl-dev libselinux1 xterm libtool texinfo zlib1g-dev screen \
   pax gawk python3 python3-pexpect python3-pip python3-git python3-jinja2 \
   xz-utils debianutils iputils-ping libegl1-mesa libsdl1.2-dev pylint3 cpio \
-  libncurses5
+  libncurses5 libxv-dev
 ```
 
