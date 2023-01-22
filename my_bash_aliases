@@ -53,6 +53,6 @@ alias sett=set_gnome_terminal_title
 
 alias extract_install_code_from_markdown="source ~/git/mine/gists/extract-code-from-markdown.sh"
 
-export PATH=$PATH:~/bin:.
+export PATH=$PATH:~/bin
 
 

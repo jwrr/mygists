@@ -16,8 +16,9 @@ source $XILINX_PATH/Vitis/$XILINX_VERSION/settings64.sh
 echo skipping: sudo dpkg-reconfigure dash
 # sudo dpkg-reconfigure dash
 
-echo sudo service tftpd-hpa restart
-sudo service tftpd-hpa restart
+# if tftpd isn't running then start it
+service tftpd-hpa status | grep inactive && sudo service tftpd-hpa start
+
 echo source $XILINX_PATH/PetaLinux/$XILINX_VERSION/settings.sh
 source $XILINX_PATH/PetaLinux/$XILINX_VERSION/settings.sh
 
