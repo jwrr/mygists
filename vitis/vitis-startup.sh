@@ -6,7 +6,7 @@ export XILINX_HLS="Error - not defined"
 export XILINX_VITIS="Error - not defined"
 export PETALINUX="Error - not defined"
 export PETALINUX="Error - not defined"
-
+export XILINX_WORKSPACE=$PWD
 echo source $XILINX_PATH/Vitis/$XILINX_VERSION/bin/setupEnv.sh
 source $XILINX_PATH/Vitis/$XILINX_VERSION/bin/setupEnv.sh
 echo source $XILINX_PATH/Vitis/$XILINX_VERSION/settings64.sh
@@ -21,6 +21,7 @@ echo sudo service tftpd-hpa restart
 sudo service tftpd-hpa restart
 echo source $XILINX_PATH/PetaLinux/$XILINX_VERSION/settings.sh
 source $XILINX_PATH/PetaLinux/$XILINX_VERSION/settings.sh
+
 
 env |grep XILINX_.*=
 env |grep PETALINUX=
