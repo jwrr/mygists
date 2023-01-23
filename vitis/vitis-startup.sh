@@ -19,6 +19,11 @@ echo skipping: sudo dpkg-reconfigure dash
 # if tftpd isn't running then start it
 service tftpd-hpa status | grep inactive && sudo service tftpd-hpa start
 
+# if user is not in group 'dialout' the add to group. This is needed to
+# connect to USB.
+groups | grep dialout || sudo adduser $USER dialout
+
+
 echo source $XILINX_PATH/PetaLinux/$XILINX_VERSION/settings.sh
 source $XILINX_PATH/PetaLinux/$XILINX_VERSION/settings.sh
 
