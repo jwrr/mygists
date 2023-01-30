@@ -23,7 +23,6 @@ service tftpd-hpa status | grep inactive && sudo service tftpd-hpa start
 # connect to USB.
 groups | grep dialout || sudo adduser $USER dialout
 
-
 echo source $XILINX_PATH/PetaLinux/$XILINX_VERSION/settings.sh
 source $XILINX_PATH/PetaLinux/$XILINX_VERSION/settings.sh
 
@@ -31,5 +30,7 @@ source $XILINX_PATH/PetaLinux/$XILINX_VERSION/settings.sh
 env |grep XILINX_.*=
 env |grep PETALINUX=
 
+export PLATFORM_REPO_PATHS=~/vitis/platforms
+env |grep PLATFORM_REPO_PATHS
 echo done
 

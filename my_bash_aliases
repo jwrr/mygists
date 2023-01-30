@@ -15,7 +15,7 @@ alias vitis_start='source ~/git/mine/gists/vitis/vitis-startup.sh'
 
 ## ==================================================================
 ## Anaconda
-alias conda_start='source ~/git/mine/gists/conda/conda-startup.sh'
+alias conda_start='source ~/git/mine/gists/conda/miniconda-startup.sh'
 
 alias cd..='cd ..'
 alias home='cd ~'
