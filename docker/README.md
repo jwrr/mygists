@@ -55,3 +55,21 @@ sudo docker run -it -p 1337:1337 luvit bash
 sudo docker run -d -p 1337:1337 luvit
 ```
 
+Run Conan C++ Package Manager in Docker
+---------------------------------------
+
+Build Docker image. Details are in the Dockerfile.
+
+```
+cd .
+sudo docker build -t boost-gpp-conan .
+```
+
+Start an interactive Docker container.
+
+```
+sudo docker run -it boost-gpp-conan bash
+```
+
+
+
