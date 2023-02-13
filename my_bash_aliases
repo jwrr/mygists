@@ -24,16 +24,32 @@ function pup { if [ "$1" = "" ]; then cnt=1; else cnt=$1; fi; pushd ..; for ((i=
 function up { if [ "$1" = "" ]; then cnt=1; else cnt=$1; fi; for ((i=0; i<$cnt; i++)); do cd .. ; done; ls; pwd; }
 
 alias big='du -sc * | sort -nr'
+
 alias diskspace='df .'
 alias Eg='env |grep'
 alias Fg='find . |grep'
 alias fdir='find . -type d -not -path "*/.*"'
 alias fontsize='gsettings set org.gnome.desktop.interface text-scaling-factor'
-alias gitpush='git push'
+
+## ==================================================================
+## Git
+export mygit=~/git/mine
+function mygit { if [ "$1" = "" ]; then cd $mygit; else cd $mygit/$1; fi; ls; pwd; }
+export GITUSER=$USERNAME
+export GITHOST=$GITUSER@github.com
+if [ -f ~/.bash_aliases ]; then
+    source ~/.private
+fi
+function gitclone { git clone https://$GITHOST/$GITUSER/$1; cd $1; ls; pwd; }
+export githelp=$mygit/gists/git-stuff
+function githelp { if [ "$1" = "" ]; then ls -1 $githelp; else cat $githelp/$1; fi; }
 alias gitunadd='git reset'
 alias gitundo='git checkout --'
+
+
 alias h='history'
 alias Hg='history | grep'
+alias join_lines='tr "\n" " "; echo;'
 alias led='lued'
 alias lalias='led ~/.bash_aliases'
 alias salias='source ~/.bash_aliases'
@@ -41,7 +57,7 @@ alias la='ls -a'
 alias ltr='ls -ltrah'
 function md { mkdir -p $1; cd $1; ls; pwd; }
 alias stopwatch='echo "Press <Enter> to stop..."; time read'
-alias update='sudo apt-get update && sudo apt-get upgrade'
+alias upgrade='sudo apt-get update && sudo apt-get upgrade'
 
 alias zipl='zip lued-latest.zip `find .lued |grep -v git |grep -v build`'
 alias shal='sha256sum lued-latest.zip > sha256sum.txt'
@@ -53,6 +69,50 @@ alias sett=set_gnome_terminal_title
 
 alias extract_install_code_from_markdown="source ~/git/mine/gists/extract-code-from-markdown.sh"
 
-export PATH=$PATH:~/bin
+
+## ==================================================================
+## Docker
+export dkfiles=$mygit/docker-stuff/dockerfiles
+alias dk='sudo docker'
+function dkbash { sudo docker exec -it $1 bash; }
+alias dkstopall='sudo docker stop $(sudo docker ps -q)'
+alias dkrmall='sudo docker stop $(sudo docker ps -a -q)'
+alias cddkfiles='cd $dkfiles; ls; pwd'
+alias dkfiles='ls -d $dkfiles/* |sed -s "s#.*/##"'
+function dkbuild { sudo docker build -t $1 $dockerfiles/$1; }
+alias dkcreate='sudo docker create'
+alias dkstart='sudo docker start'
+alias dkstop='sudo docker stop'
+alias dkkill='sudo docker kill'
+alias dkrestart='sudo docker restart'
+alias dkpause='sudo docker pause'
+alias dkunpause='sudo docker unpause'
+alias dkrm='sudo docker rm'
+alias dkps='sudo docker ps'
+alias dkpsa='sudo docker ps -a'
+alias dktop='sudo docker top'
+alias dkdiff='sudo docker diff'
+alias dkinspect='sudo docker inspect'
+alias dkattach='sudo docker attach'
+alias dkcp='sudo docker cp'
+alias dkexport='sudo docker export'
+alias dkexec='sudo docker exec'
+alias dkwait='sudo docker wait'
+alias dkcommit='sudo docker commit'
+alias dkimages='sudo docker images'
+alias dkhistory='sudo docker history'
+alias dktag='sudo docker tag'
+alias dkimport='sudo docker import'
+alias dkrmi='sudo docker rmi'
+alias dkpull='sudo docker pull'
+alias dkpush='sudo docker push'
+alias dksearch='sudo docker search'
+alias dklogin='sudo docker login'
+alias dklogout='sudo docker logout'
+alias dksave='sudo docker save'
+alias dkload='sudo docker load'
+alias dk_build_commands='echo FROM MAINTAINER COPY ADD RUN USER WORKDIR CMD ENV'
+
+export PATH=$PATH:/var/local/luarocks-3.8.0/lua_modules/bin:~/bin
 
 
